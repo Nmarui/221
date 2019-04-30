@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding:0;
+        }
+        canvas{
+            position: absolute;
+        }
+        #div{
+            width: 222px;
+            height:111px;
+            color: #ff0000;
+            font-size:30px;
+            text-align: center;
+            line-height: 111px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <canvas id="canvas" width="222" height="111"></canvas>
+</body>
+<script>
+    window.onload=function(){
+        var div=document.getElementById("div");
+        var nameList=['一等奖','二等奖','三等奖','未中奖','未中奖','未中奖'];
+        var number=Math.ceil(Math.random()*100)%nameList.length;
+        div.innerHTML=nameList[number];
+    }
+    var canvas=document.getElementById("canvas");
+    var aa=canvas.getContext('2d');
+    aa.fillStyle="#d1d1d1";
+    aa.fillRect(0,0,200,100);
+    canvas.onmousedown=function(){
+        show();
+        judge();
+        canvas.onmousemove=function(){
+            show();
+            judge();
+        }
+    }
+    canvas.onmouseup=function(){
+        canvas.onmousemove=function(){
+
+        }
+    }
+    function show(){
+        var x=event.clientX;
+        var y=event.clientY;
+        console.log(x,y)
+        aa.globalCompositeOperation="destination-out";
+        aa.beginPath();
+        aa.arc(x,y,20,0,Math.PI*2);
+        aa.closePath();
+        aa.fill();
+    }
+    function judge(){
+        var imageDate=aa.getImageData(0, 0, 222, 111);
+        var data=imageDate.data;
+        var len=data.length;
+        var len0=0;
+        for (var i=3;i<len;i+=4) { 		
+            var j=data[i];
+            if(j<1){
+                len0++;	
+            } 			
+        }	
+        var over=len0*4/len; 
+        if(over>0.85){
+            alert("结束！");
+            aa.fillRect(0,0,222,111);
+            canvas.onmousemove=function(){
+
+            }
+        }
+    }
+</script>
+</html>
