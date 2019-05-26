@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .large{
+            width:550px;
+            height: 600px;
+            border: 2px solid grey;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 4px solid grey;
+        }
+        .pic{
+            width: 550px;
+            height: 400px;
+            position: absolute;
+            transition: all height 0.5s;
+        }
+        .pic img{
+            transition: all ease 0.5s;
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+            width: 550px;
+            height: 400px;
+        }
+        .one{
+            font-size: 20px;
+            color: black;
+        }
+        .two{
+            font-size: 16px;
+            color: orangered;
+        }
+        .three{
+            font-size: 10px;
+            color: grey;
+        }
+        .tai{
+            font-size: 16px;
+            color: grey;
+        }
+        .ti{
+            width:550px;
+            height: 100px;
+            position: absolute;
+            margin-top: 400px;
+        }
+        .content{
+            width: 550px;
+            background-color:white;
+            transition: height 1s;
+            position: absolute;
+            margin-top: 600px;
+        }
+        .tail{
+            width: 550px;
+            height: 50px;
+            margin-top: 550px;
+            position: absolute;
+            
+        }
+        .large:hover {
+            box-shadow: 4px solid gray;
+        }
+        .large:hover .pic{
+            height:400px;
+            background:gray;
+            
+                     
+        }
+        .large:hover .pic img{
+            height:400px;
+            width: 550px;
+            opacity: 0.6;
+            transform: scale(1.2);  
+
+        }
+        .large:hover .ti{
+            margin-top: 300px; 
+            background: white; 
+        }
+        .large:hover .content{
+            margin-top: 400px;
+        }
+        .large:hover .little{
+            margin-top: 280px;
+        }
+        .circle{
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+            background: greenyellow;
+            position: absolute;
+            margin-left: 470px;
+            margin-top: 30px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+        .little{
+            width: 40px;
+            height: 20px;
+            position: absolute;
+            margin-top: 380px;
+            background: greenyellow;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="large">
+        <div class="pic">
+            <img src="0.jpg">
+        </div>
+        <div class="circle">
+            五月
+        </div>
+        <div class="little">
+            照片
+        </div>
+        <div class="ti">
+            <p class="one">
+                <b>栈桥</b>
+            </p>
+            <p class="two">
+                国家AAAAA级景区
+            </p>
+        </div> 
+        <div class="content">
+            <p class="tai">
+                吴王宫的大殿周围，伴随着池塘、花园、亭台等景物，
+                让我见识到了孙吴政权雄厚的实力。在吴王宫对面便
+                是太湖，太湖之上建有长长的赤壁古栈道，走在这条
+                古栈道上，抬头可以近距离观赏太湖水的波纹，
+                聆听太湖水的涛声，回头便可以纵览影视城的全貌。
+                吴王宫的大殿周围，伴随着池塘、花园、亭台等景物，
+                让我见识到了孙吴政权雄厚的实力。在吴王宫对面便
+                是太湖，太湖之上建有长长的赤壁古栈道，走在这条
+                古栈道上，抬头可以近距离观赏太湖
+            </p>
+        </div>
+        <div class="tail">
+            <p class="three">10分钟前 123人评论</p>
+        </div>
+    </div>
+    
+</body>
+</html>
